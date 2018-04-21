@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+{{ data }}
+<h3> Serach Bank using IFSC </h3>
+<form method="post" action="/branch_details"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Enter IFSC Code:</td>
+            <td><input type="text" name="ifsc_code"/></td>
+        </tr>
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <button>Submit IFSC</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<h3> Serach Bank using City name and Bank name </h3>
+<form method="post" action="/all_branch_details"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Enter City name:</td>
+            <td><input  type="text" name="city_name"/></td>
+        </tr>
+        <tr>
+            <td>Enter Bank name:</td>
+            <td><input style="width:300px" type="text" name="bank_name"/></td>
+        </tr>
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <button>Submit Details</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>
